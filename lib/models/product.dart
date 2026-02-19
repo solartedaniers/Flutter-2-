@@ -1,5 +1,4 @@
-// Clase modelo Producto (POO)
-// Representa la entidad del negocio
+// Modelo Producto (POO)
 
 class Product {
   final int id;
@@ -8,7 +7,6 @@ class Product {
   final double price;
   final String image;
 
-  // Constructor tipado obligatorio
   Product({
     required this.id,
     required this.name,
@@ -17,3 +15,4 @@ class Product {
     required this.image,
   });
 }
+

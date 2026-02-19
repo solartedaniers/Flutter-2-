@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/product.dart';
 
-// Stateful porque cambia en ejecución
 class CartPage extends StatefulWidget {
   final List<Product> cart;
 
@@ -23,7 +22,7 @@ class CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Carrito")),
+      appBar: AppBar(title: const Text("Carrito de Compras")),
       body: Column(
         children: [
           Expanded(
@@ -31,18 +30,29 @@ class CartPageState extends State<CartPage> {
               itemCount: widget.cart.length,
               itemBuilder: (_, index) {
                 final product = widget.cart[index];
-                return ListTile(
-                  title: Text(product.name),
-                  subtitle: Text("\$${product.price}"),
+                return Card(
+                  margin: const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  child: ListTile(
+                    leading: Image.network(product.image),
+                    title: Text(product.name),
+                    subtitle: Text("Precio: \$${product.price}"),
+                    trailing: const Icon(Icons.check_circle,
+                        color: Colors.green),
+                  ),
                 );
               },
             ),
           ),
           Text("Total: \$${getTotal()}",
-              style: const TextStyle(fontSize: 22)),
-          const SizedBox(height: 10),
+              style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF4A00E0))),
+          const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {}, // NO funcional aún
+            onPressed: () {},
             child: const Text("Pagar"),
           ),
           const SizedBox(height: 20),
