@@ -1,5 +1,3 @@
-// Modelo Producto (POO)
-
 class Product {
   final int id;
   final String name;

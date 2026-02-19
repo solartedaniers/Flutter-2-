@@ -5,19 +5,19 @@ import '../models/product.dart';
 class ProductCard extends StatelessWidget {
   final Product product;
   final VoidCallback onTap;
-  final Function(Product) onAdd; // ← NUEVO
+  final Function(Product) onAdd; 
 
   const ProductCard({
     super.key,
     required this.product,
     required this.onTap,
-    required this.onAdd, // ← NUEVO
+    required this.onAdd, 
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap, // Ir a detalles si toca la tarjeta
+      onTap: onTap, 
       child: Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -50,7 +50,7 @@ class ProductCard extends StatelessWidget {
 
             const SizedBox(height: 8),
 
-            // 🔥 BOTÓN DIRECTO AL CARRITO
+            // BOTÓN DIRECTO AL CARRITO
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
@@ -58,7 +58,7 @@ class ProductCard extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               ),
               onPressed: () {
-                onAdd(product); // ← agrega sin entrar al detalle
+                onAdd(product); 
 
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

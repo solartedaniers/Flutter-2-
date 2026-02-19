@@ -44,7 +44,7 @@ class HomePageState extends State<HomePage> {
                 onPressed: goToCart,
               ),
 
-              // 🔥 Contador visual del carrito
+              // Contador visual del carrito
               if (cart.isNotEmpty)
                 Positioned(
                   right: 6,
@@ -100,7 +100,6 @@ class HomePageState extends State<HomePage> {
                 );
               },
 
-              // 🔥 Agregar directo
               onAdd: addToCart,
             );
           },
